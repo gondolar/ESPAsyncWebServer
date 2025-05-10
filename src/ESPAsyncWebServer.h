@@ -1099,7 +1099,7 @@ public:
   void begin();
   void end();
 
-  tcp_state state() const {
+  tcp_state state() {
 #ifdef ESP8266
     // ESPAsyncTCP and RPAsyncTCP methods are not corrected declared with const for immutable ones.
     return static_cast<tcp_state>(const_cast<AsyncWebServer *>(this)->_server.status());
